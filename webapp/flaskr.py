@@ -392,8 +392,9 @@ def interesting():
     """
     Show Interesting recipes based on special formula.
     You can see the implementation in recengine.
+    Hackernews like interested, #http://amix.dk/blog/post/19574
 
-    :return:
+    :return: Page with interesting recipes.
     """
     recipe = nonpcol.NonPersonal.find_one({'_id': 1})
     entries = recipecol.Recipe.find({'_id': {'$in': recipe['topinteresting']}})
